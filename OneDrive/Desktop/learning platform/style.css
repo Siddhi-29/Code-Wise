@@ -4,17 +4,21 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
 body, html {
     background: linear-gradient(135deg, #ff6f61, #6b48ff);
+    background-attachment: fixed; /* Keep the background fixed */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Shadow effect */
-     min-height: 100vh;
+    min-height: 100vh;
     scroll-behavior: smooth;
-
-    position: relative;
+}
+.scroll-section {
+    padding: 50px 80px; /* Add some padding for spacing */
+    background: linear-gradient(135deg, #ff6f61, #6b48ff);
+    color: #333; /* Text color */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Optional: shadow for depth */
+    margin-top:150px
     
-    }
-    
+}
 
 
 a {
@@ -22,15 +26,17 @@ a {
     text-decoration: none;
 }
 
+/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
+    height: 60px; /* Fixed height for navbar */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 9%;
-    background-color: transparent;
+    padding: 0 9%; /* Adjusted padding */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     z-index: 10;
 }
 
@@ -68,8 +74,8 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    padding-top: 60px;
+    height: calc(100vh - 60px); /* Full viewport height minus navbar height */
+    padding-top: 80px; /* Increased padding to ensure space for navbar */
 }
 
 .text-image-container {
@@ -86,11 +92,28 @@ a {
     padding: 20px;
     color: #ffffff;
     text-align: left;
+    margin-top: 450px;
 }
 
 .about-text h1 {
     font-size: 40px;
     margin-bottom: 20px;
+    margin-top: -400px;
+}
+.about-text h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.about-text h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.about-text h4{
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: 20px;
 }
 
 .about-image {
@@ -102,13 +125,21 @@ a {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+}
 
-   }
 .about-container:hover {
     box-shadow: 0 25px 25px rgba(1, 1, 1, 0.05);
     transform: scale(1.02);
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .text-image-container {
+        flex-direction: column;
+    }
 
-
-
+    .about-image {
+        text-align: center;
+        margin-top: 20px;
+    }
+}
